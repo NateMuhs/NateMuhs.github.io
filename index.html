@@ -24,7 +24,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #333;
+      background-color: #6E8DA9; /* Updated header bar color */
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -112,6 +112,18 @@
       line-height: 1.5;
     }
 
+    .intro-text .hello {
+      color: #F2F5EA; /* Color for "Hello!" */
+    }
+
+    .intro-text .my-name {
+      color: #F2F5EA; /* Color for "My name is" */
+    }
+
+    .intro-text .nathaniel {
+      color: #082D0F; /* Color for "Nathaniel" */
+    }
+
     #about {
       background-color: #e0f7fa;
     }
@@ -172,7 +184,7 @@
         position: absolute;
         top: 100%;
         right: 0; /* Align menu to the right */
-        background-color: #333;
+        background-color: #6E8DA9; /* Updated header bar color */
         width: 100%;
         padding: 1rem;
       }
@@ -219,7 +231,11 @@
 
   <section id="home">
     <div class="intro-text">
-      <h1>Hello, my name is Nathaniel</h1>
+      <h1>
+        <span class="hello">Hello!</span><br />
+        <span class="my-name">My name is</span><br />
+        <span class="nathaniel">Nathaniel</span>
+      </h1>
     </div>
   </section>
 
@@ -250,28 +266,6 @@
   </section>
 
   <script>
-    // Highlight the active section in the navbar
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar .menu a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
-      });
-    });
-
     function toggleMenu() {
       const menu = document.querySelector('.navbar .menu');
       menu.classList.toggle('active');
