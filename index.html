@@ -12,80 +12,119 @@
     }
 
     html, body {
-      height: 100%;
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #f5f5f5;
       color: #222;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      color: #00bcd4;
+    }
+
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
       text-align: center;
     }
 
-    .container {
-      padding: 2rem;
+    #home {
+      background-color: #f5f5f5;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+    #about {
+      background-color: #e0f7fa;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #555;
-      margin-bottom: 1.5rem;
+    #work {
+      background-color: #ffe0b2;
     }
 
-    p {
-      font-size: 1rem;
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
+    #projects {
+      background-color: #dcedc8;
     }
 
-    .links a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      border: 2px solid #333;
-      color: #333;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .links a:hover {
-      background-color: #333;
-      color: #fff;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
+    #contact {
+      background-color: #ffcdd2;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Nathaniel Muhs</h1>
-    <h2>Electrical Engineering Student at WVU</h2>
-    <p>
-      Interested in power systems, embedded electronics, and hardware design. Currently building hands-on projects and open to internships.
-    </p>
-    <div class="links">
-      <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/YOUR_LINK" target="_blank">LinkedIn</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-    </div>
+  <div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+
+  <section id="home">
+    <h1>Welcome to My Website</h1>
+    <p>This is the home section.</p>
+  </section>
+
+  <section id="about">
+    <h1>About Me</h1>
+    <p>Learn more about me here.</p>
+  </section>
+
+  <section id="work">
+    <h1>Work Experience</h1>
+    <p>Details about my work experience.</p>
+  </section>
+
+  <section id="projects">
+    <h1>Projects</h1>
+    <p>Check out my projects here.</p>
+  </section>
+
+  <section id="contact">
+    <h1>Get in Contact</h1>
+    <p>Feel free to reach out to me!</p>
+  </section>
+
+  <script>
+    // Highlight the active section in the navbar
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
