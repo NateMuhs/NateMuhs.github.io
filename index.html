@@ -33,19 +33,26 @@
       z-index: 1000;
     }
 
-    .navbar .links {
-      display: flex;
+    .navbar .menu {
+      display: none;
+      flex-direction: column;
       gap: 1rem;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 1rem;
     }
 
-    .navbar a {
+    .navbar .menu a {
       color: #fff;
       text-decoration: none;
       font-size: 1rem;
       transition: color 0.2s ease-in-out;
     }
 
-    .navbar a:hover, .navbar a.active {
+    .navbar .menu a:hover, .navbar .menu a.active {
       color: #00bcd4;
     }
 
@@ -62,6 +69,13 @@
 
     .navbar .icons a:hover {
       color: #00bcd4;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
     }
 
     section {
@@ -118,32 +132,31 @@
     /* Responsive Navbar for Mobile */
     @media (max-width: 768px) {
       .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .navbar .links {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
+      .hamburger {
+        display: block;
       }
 
-      .navbar .icons {
-        margin-top: 1rem;
-        justify-content: flex-start;
-        width: 100%;
+      .navbar .menu {
+        display: none;
       }
 
-      .navbar a {
-        font-size: 1.2rem;
+      .navbar .menu.active {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <div class="links">
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#work">Work Experience</a>
@@ -200,7 +213,7 @@
   <script>
     // Highlight the active section in the navbar
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar .links a");
+    const navLinks = document.querySelectorAll(".navbar .menu a");
 
     window.addEventListener("scroll", () => {
       let current = "";
@@ -219,6 +232,11 @@
         }
       });
     });
+
+    function toggleMenu() {
+      const menu = document.querySelector('.navbar .menu');
+      menu.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
