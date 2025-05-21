@@ -121,7 +121,7 @@
     }
 
     .intro-text .nathaniel {
-      color: #082D0F; /* Color for "Nathaniel" */
+      color: #0E1331; /* Updated color for "Nathaniel" */
     }
 
     #about {
@@ -270,6 +270,29 @@
       const menu = document.querySelector('.navbar .menu');
       menu.classList.toggle('active');
     }
+
+    // Highlight the active section in the navbar
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar .menu a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100; // Adjust for navbar height
+        const sectionHeight = section.offsetHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
   </script>
 </body>
 </html>
