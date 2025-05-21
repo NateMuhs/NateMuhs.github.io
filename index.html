@@ -33,6 +33,21 @@
       z-index: 1000;
     }
 
+    .navbar .icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar .icons a {
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .navbar .icons a:hover {
+      color: #00bcd4;
+    }
+
     .navbar .menu {
       display: flex;
       gap: 1.5rem;
@@ -51,21 +66,6 @@
       color: #00bcd4;
       border-bottom: 2px solid #00bcd4;
       padding-bottom: 2px;
-    }
-
-    .navbar .icons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .navbar .icons a {
-      font-size: 1.5rem;
-      color: #fff;
-      transition: color 0.2s ease-in-out;
-    }
-
-    .navbar .icons a:hover {
-      color: #00bcd4;
     }
 
     .hamburger {
@@ -87,43 +87,6 @@
       color: #008c9e;
     }
 
-    section {
-      padding: 100px 20px;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    #home { background-color: #f5f5f5; }
-    #about { background-color: #e0f7fa; }
-    #work { background-color: #ffe0b2; }
-    #projects { background-color: #dcedc8; }
-    #contact { background-color: #ffcdd2; }
-
-    #testimonials {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #e0f7fa;
-      border-left: 5px solid #00bcd4;
-    }
-
-    #testimonials h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    #testimonials blockquote {
-      font-style: italic;
-      margin: 1rem 0;
-      padding-left: 1rem;
-      color: #555;
-    }
-
-    #testimonials footer {
-      font-size: 0.9rem;
-      color: #777;
-      text-align: right;
-    }
-
     /* Responsive Navbar for Mobile */
     @media (max-width: 768px) {
       .navbar {
@@ -142,7 +105,7 @@
         gap: 1rem;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0; /* Align menu to the right */
         background-color: #333;
         width: 100%;
         padding: 1rem;
@@ -151,14 +114,31 @@
       .navbar .menu.active {
         display: flex;
       }
+
+      .navbar .icons {
+        order: -1; /* Move icons to the left */
+      }
     }
   </style>
 </head>
 <body>
   <div class="navbar">
+    <!-- GitHub and LinkedIn Links on the Left -->
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/nathaniel-muhs-949428280/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/NateMuhs" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
     <div class="hamburger" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </div>
+
+    <!-- Navigation Links on the Right -->
     <div class="menu">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
@@ -167,14 +147,6 @@
       <a href="#contact">Contact</a>
       <a href="Application Resume.docx" target="_blank" class="resume-link">
         <i class="fas fa-file-alt"></i> Resume
-      </a>
-    </div>
-    <div class="icons">
-      <a href="https://www.linkedin.com/in/nathaniel-muhs-949428280/" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/NateMuhs" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
       </a>
     </div>
   </div>
@@ -210,28 +182,6 @@
   </section>
 
   <script>
-    // Highlight the active section in the navbar
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar .menu a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
-      });
-    });
-
     function toggleMenu() {
       const menu = document.querySelector('.navbar .menu');
       menu.classList.toggle('active');
