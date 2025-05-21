@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nathaniel Muhs</title>
+  <!-- Add Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -25,21 +27,30 @@
       background-color: #333;
       color: #fff;
       display: flex;
-      justify-content: center;
-      padding: 1rem 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       z-index: 1000;
+    }
+
+    .navbar .links {
+      display: flex;
+      gap: 1rem;
     }
 
     .navbar a {
       color: #fff;
       text-decoration: none;
-      margin: 0 1rem;
       font-size: 1rem;
       transition: color 0.2s ease-in-out;
     }
 
     .navbar a:hover, .navbar a.active {
       color: #00bcd4;
+    }
+
+    .navbar .icons a {
+      font-size: 1.5rem;
     }
 
     section {
@@ -71,11 +82,21 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#work">Work Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/your-username" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
   </div>
 
   <section id="home">
@@ -106,7 +127,7 @@
   <script>
     // Highlight the active section in the navbar
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
+    const navLinks = document.querySelectorAll(".navbar .links a");
 
     window.addEventListener("scroll", () => {
       let current = "";
