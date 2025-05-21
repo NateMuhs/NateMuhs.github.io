@@ -24,13 +24,18 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #6E8DA9;
+      background-color: transparent;
+      transition: background-color 0.3s;
       color: #F2F5EA;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background-color: #6E8DA9;
     }
 
     .navbar .icons {
@@ -307,6 +312,17 @@
       menu.classList.toggle('active');
     }
 
+    // Navbar background scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      // Change 100 to the number of pixels you want before the background appears
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navbar .menu a");
 
@@ -327,6 +343,13 @@
           link.classList.add("active");
         }
       });
+
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
   </script>
 </body>
