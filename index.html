@@ -1,113 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nathaniel Muhs | Electrical Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathaniel Muhs</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    header {
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 2rem 1rem;
+    html, body {
+      height: 100%;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    .container {
+      padding: 2rem;
     }
 
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #0066cc;
-      font-weight: bold;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .project {
-      margin-bottom: 2rem;
-    }
-
-    .project h3 {
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #999;
-      padding: 2rem 1rem;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #333;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .links a:hover {
+      background-color: #333;
+      color: #fff;
     }
 
     @media (max-width: 600px) {
-      header h1 {
+      h1 {
         font-size: 2rem;
       }
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
+
+      h2 {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
+  <div class="container">
     <h1>Nathaniel Muhs</h1>
-    <p>Electrical Engineering Student at WVU</p>
-    <nav>
-      <a href="https://github.com/YOUR_USERNAME">GitHub</a>
-      <a href="resume.pdf">Resume</a>
-      <a href="#projects">Projects</a>
-    </nav>
-  </header>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>🔌 Smart Power Meter</h3>
-      <p>Monitors real-time AC voltage and current using ESP32, ACS712, and ZMPT101B sensors. Logs and displays data via Wi-Fi.</p>
-      <p><a href="https://github.com/YOUR_USERNAME/power-meter">View on GitHub →</a></p>
+    <h2>Electrical Engineering Student at WVU</h2>
+    <p>
+      Interested in power systems, embedded electronics, and hardware design. Currently building hands-on projects and open to internships.
+    </p>
+    <div class="links">
+      <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/YOUR_LINK" target="_blank">LinkedIn</a>
+      <a href="resume.pdf" target="_blank">Resume</a>
     </div>
-
-    <div class="project">
-      <h3>📡 Microgrid Simulation in MATLAB</h3>
-      <p>Modeled a 3-node microgrid to simulate load flow, generator response, and voltage drop across transmission lines.</p>
-      <p><a href="#">(Coming Soon)</a></p>
-    </div>
-
-  </section>
-
-  <footer>
-    &copy; 2025 Nathaniel Muhs. Hosted on GitHub Pages.
-  </footer>
-
+  </div>
 </body>
 </html>
