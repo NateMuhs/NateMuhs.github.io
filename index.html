@@ -2,32 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name | Projects</title>
+  <title>Nathaniel Muhs | Electrical Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: sans-serif; margin: 2rem; }
-    h1, h2 { color: #003366; }
-    a { color: #0066cc; }
-    .project { margin-bottom: 2rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      padding: 2rem 1rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p>Electrical Engineering Student | Power Systems | Embedded Projects</p>
-  <p>
-    <a href="https://github.com/YOUR_USERNAME">GitHub</a> |
-    <a href="resume.pdf">Resume</a>
-  </p>
 
-  <h2>Projects</h2>
+  <header>
+    <h1>Nathaniel Muhs</h1>
+    <p>Electrical Engineering Student at WVU</p>
+    <nav>
+      <a href="https://github.com/YOUR_USERNAME">GitHub</a>
+      <a href="resume.pdf">Resume</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-  <div class="project">
-    <h3>Smart Power Meter</h3>
-    <p>ESP32 project to monitor AC voltage and current in real time.</p>
-    <ul>
-      <li>Used ACS712 & ZMPT101B sensors</li>
-      <li>Logged real-time power via Wi-Fi</li>
-      <li><a href="https://github.com/YOUR_USERNAME/power-meter">View on GitHub</a></li>
-    </ul>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>🔌 Smart Power Meter</h3>
+      <p>Monitors real-time AC voltage and current using ESP32, ACS712, and ZMPT101B sensors. Logs and displays data via Wi-Fi.</p>
+      <p><a href="https://github.com/YOUR_USERNAME/power-meter">View on GitHub →</a></p>
+    </div>
+
+    <div class="project">
+      <h3>📡 Microgrid Simulation in MATLAB</h3>
+      <p>Modeled a 3-node microgrid to simulate load flow, generator response, and voltage drop across transmission lines.</p>
+      <p><a href="#">(Coming Soon)</a></p>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Nathaniel Muhs. Hosted on GitHub Pages.
+  </footer>
+
 </body>
 </html>
